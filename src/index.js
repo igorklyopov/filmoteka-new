@@ -9,7 +9,7 @@ import './sass/main.scss';
 //===
 // import MoviesApiService from './js/apiService';
 import { refs } from './js/refs';
-// import './js/onSearch'
+import './js/onSearch';
 // import './js/toTopButton'
 import './js/homeAndLibrarySwitch';
 // import { onHomePageLoad, onWeekBtnClick, onDayBtnClick, loadMorePopMovies} from './js/popMoviesLoadFunctions';
