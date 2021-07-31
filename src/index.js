@@ -8,10 +8,10 @@ import './sass/main.scss';
 // import themeSwitcher from './js/theme-switcher';
 //===
 // import MoviesApiService from './js/apiService';
-// import { refs } from './js/refs';
+import { refs } from './js/refs';
 // import './js/onSearch'
 // import './js/toTopButton'
-// import './js/spa';
+import './js/homeAndLibrarySwitch';
 // import { onHomePageLoad, onWeekBtnClick, onDayBtnClick, loadMorePopMovies} from './js/popMoviesLoadFunctions';
 
 // onHomePageLoad()
