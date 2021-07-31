@@ -12,20 +12,20 @@ import { refs } from './js/refs';
 import './js/onSearch';
 // import './js/toTopButton'
 import './js/homeAndLibrarySwitch';
-// import { onHomePageLoad, onWeekBtnClick, onDayBtnClick, loadMorePopMovies} from './js/popMoviesLoadFunctions';
+import { onHomePageLoad, onWeekBtnClick, onDayBtnClick, loadMorePopMovies} from './js/popMoviesLoadFunctions';
 
-// onHomePageLoad()
+onHomePageLoad()
 
-// refs.weekBtn.addEventListener('click', onWeekBtnClick);
-// refs.dayBtn.addEventListener('click', onDayBtnClick);
+refs.weekBtn.addEventListener('click', onWeekBtnClick);
+refs.dayBtn.addEventListener('click', onDayBtnClick);
 
-// const moviesLoadObserver = new IntersectionObserver(makeInfiniteScrolling, { threshold: 0 });
+const moviesLoadObserver = new IntersectionObserver(makeInfiniteScrolling, { threshold: 0 });
  
-//   function makeInfiniteScrolling ([entrie]) {
-//        if (!entrie.isIntersecting) {
-//          return;
-//        }
-//        loadMorePopMovies();
-//    };
+  function makeInfiniteScrolling ([entrie]) {
+       if (!entrie.isIntersecting) {
+         return;
+       }
+       loadMorePopMovies();
+   };
    
-//    moviesLoadObserver.observe(refs.infiniteScrollingAnchor);
+   moviesLoadObserver.observe(refs.infiniteScrollingAnchor);
