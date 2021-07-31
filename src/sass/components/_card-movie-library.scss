@@ -1,0 +1,58 @@
+.card-library {
+  width: 280px;
+  height: 440px;
+  @include adaptive-for-tablet {
+    width: 293px;
+  }
+  @include adaptive-for-desktop {
+    width: 274px;
+  }
+}
+.img-card-library {
+  height: 398px;
+  width: 280px;
+  border-radius: 5px;
+  @include adaptive-for-tablet {
+    width: 293px;
+  }
+  @include adaptive-for-desktop {
+    width: 274px;
+  }
+}
+.movie-information {
+  margin-top: 10px;
+  max-width: 274px;
+  height: 32px;
+  line-height: 16px;
+}
+.movie-name {
+  margin: 0;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: var(--medium-font-weight);
+  text-transform: uppercase;
+}
+.generes-rating {
+  display: flex;
+}
+.genres {
+  margin: 0;
+  font-style: normal;
+  font-weight: var(--medium-font-weight);
+  color: var(--primary-accent-color);
+}
+.rating-container {
+  margin-left: 10px;
+  width: 36px;
+  height: 16px;
+  background: var(--primary-accent-color);
+  border-radius: 5px;
+}
+.rating {
+  display: flex;
+  justify-content: center;
+  color: var(--secondary-text-color);
+  font-style: normal;
+  font-weight: var(--medium-font-weight);
+  align-items: center;
+}

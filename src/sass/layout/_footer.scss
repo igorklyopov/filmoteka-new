@@ -1,245 +1,197 @@
 .footer {
-  position: relative;
-  // background-image: url(./../images/footer/greens-mobile.png);
-  // background-repeat: no-repeat;
-  // background-position: 0 -40%;
-  // background-size: 140px 358px;
-
-  // @media screen and (min-device-pixel-ratio: 2),
-  //   screen and (min-resolution: 192dpi),
-  //   screen and (min-resolution: 2dppx) {
-  //   background-image: url(./../images/footer/greens-mobile@2x.png);
-  // }
-
-  // @include adaptive-for-tablet {
-  //   background-position: 0 -40%;
-  //   height: 650px;
-  //   background-size: 276px 710px;
-  //   background-image: url(./../images/footer/greens-tablet.png);
-
-  //   @media screen and (min-device-pixel-ratio: 2),
-  //     screen and (min-resolution: 192dpi),
-  //     screen and (min-resolution: 2dppx) {
-  //     background-image: url(./../images/footer/greens-tablet@2x.png);
-  //   }
-  // }
-
-  // @include adaptive-for-desktop {
-  //   background-position: 0 -40%;
-  //   height: 1090px;
-  //   background-size: 653px 1144px;
-  //   background-image: url(./../images/footer/greens-desctop.png);
-
-  //   @media screen and (min-device-pixel-ratio: 2),
-  //     screen and (min-resolution: 192dpi),
-  //     screen and (min-resolution: 2dppx) {
-  //     background-image: url(./../images/footer/greens-desctop@2x.png);
-  //   }
-  // }
+  margin-top: 40px;
+  padding-top: 30px;
+  padding-bottom: 28px;
+  background-color: var(--footer-bg-color);
 }
 
-.footer .container {
-  padding-top: 60px;
-  padding-bottom: 36px;
-
+.footer-container {
+  display: block; /*for phone, 2 lines*/
+  font-family: var(--font-family);
+  //font-style: normal;
+  font-weight: var(--regular-font-weight);
+  font-size: 14px;
+  line-height: 16px;
   @include adaptive-for-tablet {
-    padding-top: 122px;
-    // padding-bottom: 185px;
-  }
-
-  @include adaptive-for-tablet {
-    padding-top: 272px;
-    // padding-bottom: 185px;
-  }
-}
-
-.footer-wrap {
-  // background-image: linear-gradient(
-  //     to right,
-  //     var(--primary-bg-color) 10%,
-  //     transparent 10%,
-  //     transparent 90%,
-  //     var(--primary-bg-color) 90%,
-  //     var(--primary-bg-color) 100%
-  //   ),
-  //   radial-gradient(var(--bg-gradient-pattern-color) 3px, transparent 3px);
-  // background-size: 100% 100%, 45px 43px;
-
-  background-image: radial-gradient(
-    var(--bg-gradient-pattern-color) 3px,
-    transparent 3px
-  );
-  background-size: 45px 43px;
-
-  @include adaptive-for-tablet {
-    background-position: 100px 100px;
-  }
-}
-
-.footer-appeal {
-  margin-bottom: 30px;
-  padding: 0 50px;
-  text-align: center;
-
-  @include adaptive-for-tablet {
-    max-width: 535px;
-    margin-right: auto;
-    margin-left: auto;
-    padding: 0;
-  }
-}
-
-.footer-appeal .title {
-  margin-bottom: 30px;
-  @include adaptive-for-tablet {
-    font-size: 36px;
-  }
-}
-
-.footer-form {
-  margin-bottom: 30px;
-}
-
-.footer-form-mail-wrap {
-  position: relative;
-  max-width: 380px;
-  margin-right: auto;
-  margin-bottom: 30px;
-  margin-left: auto;
-}
-
-// .footer-form-field {
-//   display: block;
-//   // margin: 0 auto;
-// }
-
-.footer-input-mail {
-  padding-top: 5px;
-  padding-right: 50px;
-  padding-bottom: 5px;
-  padding-left: 33px;
-  width: 100%;
-  height: 60px;
-  background: var(--basic-light-bg-color);
-  box-shadow: 2px 2px 30px 2px var(--primary-bg-color);
-  outline: none;
-  border: none;
-  border-radius: 100px;
-
-  &::placeholder {
+    display: flex; /*for tablet and higher, 1 line*/
     font-size: 16px;
-    line-height: 1.5;
-    color: var(--secondary-text-color);
-    opacity: 0.6;
+    line-height: 19px;
+  }
+  justify-content: center; /*centers horizontally*/
+  color: var(--footer-text-color);
+}
+
+.footer-line1 {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-line2 {
+  display: flex;
+  justify-content: center;
+  margin-left: 5px;
+}
+
+.footer-icon {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.footer-active-text {
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color var(--hover-focus-transition);
+
+  &:hover,
+  &:focus {
+    color: #0000ff;
   }
 }
 
-.about-list {
+/* Modal */
+@at-root body.footer-show-modal .footer-backdrop {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: initial;
+}
+
+body.footer-show-modal .footer-modal {
+  transform: scale(1);
+}
+
+.footer-backdrop {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 26px;
-
-  @include adaptive-for-tablet {
-    margin-bottom: 45px;
-  }
-
-  @include adaptive-for-tablet {
-    margin-bottom: 185px;
-  }
-}
-
-.about-item {
-}
-
-.about-link {
-  display: block;
-  padding: 5px 5px;
-  font-size: 10px;
-  font-weight: var(--bold-font-weight);
-
-  &:focus,
-  &:hover {
-    color: var(--primary-accent-color);
-  }
-}
-
-.footer-social-copyright-wrap {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  @include adaptive-for-tablet {
-    margin-left: 70%;
-  }
-}
-
-.social-list {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 30px;
-}
-
-.social-item {
-}
-
-.social-link {
-  padding: 8px;
-
-  &:focus,
-  &:hover {
-    color: var(--primary-accent-color);
-  }
-}
-
-.facebook-icon {
-  width: 7.28px;
-  height: 13.46px;
-  fill: currentColor;
-}
-
-.twitter-icon {
-  width: 16.45px;
-  height: 13.46px;
-  fill: currentColor;
-}
-
-.linkedin-icon {
-  width: 13.49px;
-  height: 13.46px;
-  fill: currentColor;
-}
-
-.behance-icon {
-  width: 16.95px;
-  height: 10.92px;
-  fill: currentColor;
-}
-
-.footer-copyright {
-  margin: 0;
-  color: var(--basic-dark-text-color);
-}
-
-// .gradient-polka-dot-pattern {
-//   position: absolute;
-//   top: -30%;
-//   left: -32%;
-//   transform: translate(50%, 50%);
-//   z-index: -1;
-//   max-width: 100%;
-//   width: 460px;
-//   height: 325px;
-//   background-image: radial-gradient(
-//     var(--bg-gradient-pattern-color) 3px,
-//     transparent 3px
-//   );
-//   background-size: 45px 43px;
-// }
-
-.footer-decor-image {
-  position: absolute;
-  top: -15px;
+  position: fixed;
+  top: 0;
   left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 999;
+
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 200ms ease-in-out, visibility 200ms ease-in-out;
+}
+
+.footer-modal {
+  position: relative;
+  padding: 20px;
+  //min-height: 320px;
+  //width: 720px;
+  //height: 320px;
+  background-color: #fff;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14);
+  transform: scale(1.1);
+  transition: transform 200ms ease-in-out;
+}
+
+.close-modal-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.team-members-title {
+  font-size: 16px;
+  text-align: center;
+}
+
+.team-members-data {
+  display: none;
+}
+
+.team-members-list {
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  background-color: var(--footer-bg-color);
+  border-radius: 15px;
+  //justify-content: center;
+
+  overflow: auto; /*adds scrollers if needed*/
+  height: 380px;
+  width: 260px;
+  @include adaptive-for-tablet {
+    width: 620px;
+    height: auto;
+  }
+  @include adaptive-for-desktop {
+    width: 870px;
+    height: auto;
+  }
+}
+
+.team-member-card {
+  margin-top: 20px;
+  margin-left: 20px;
+  padding: 0px;
+  justify-content: center;
+}
+
+.team-member-img {
+  border-radius: 15px;
+  width: 200px;
+  height: 200px;
+  //margin-bottom: 10px;
+  @include adaptive-for-tablet {
+    width: 100px;
+    height: 100px;
+  }
+  @include adaptive-for-desktop {
+    width: 150px;
+    height: 150px;
+  }
+  /*
+	&:hover {
+		width: 200px;
+		height: 200px;
+	}
+	*/
+}
+
+.team-member-name {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+
+.team-member-surname {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
+
+.team-member-links {
+  //background-color: yellow;
+  //width: 100px;
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.team-member-link {
+  //width: 44px;
+  //height: 44px;
+}
+
+.team-member-icon {
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
+  margin-right: 10px;
+  fill: var(--footer-text-color);
+  transition: fill var(--hover-focus-transition);
+  &:hover,
+  &:focus {
+    fill: #0000ff;
+  }
 }
