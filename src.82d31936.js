@@ -21,6 +21,6 @@ module.exports=[{id:28,name:"Action"},{id:12,name:"Adventure"},{id:16,name:"Anim
 },{"./refs":"VyiV","./apiService":"eQwa","../templates/home-card-movie":"MMK1","../templates/modal-movie-content":"ATLj","./genres_ids.json":"Mme2"}],"tFbP":[function(require,module,exports) {
 "use strict";var e=require("./refs"),i=require("./onSearch");const s=document.getElementsByClassName("navigation-link");function t(i){"/library"===i?(e.refs.searchMovieForm.classList.add("visually-hidden"),e.refs.libraryButtons.classList.remove("visually-hidden"),e.refs.myLibraryIsActive.classList.add("active-navigation"),e.refs.myHomeIsActive.classList.remove("active-navigation")):(e.refs.searchMovieForm.classList.remove("visually-hidden"),e.refs.libraryButtons.classList.add("visually-hidden"),e.refs.myLibraryIsActive.classList.remove("active-navigation"),e.refs.myHomeIsActive.classList.add("active-navigation"))}[...s].forEach(e=>{e.addEventListener("click",function(e){e.preventDefault(),a(e.target.getAttribute("href"))})});const a=e=>{history.pushState(null,null,e),t(e)};window.addEventListener("popstate",()=>{t(window.location.pathname)}),t(window.location.pathname),document.querySelector(".search-movie-form").addEventListener("submit",i.onSearch);
 },{"./refs":"VyiV","./onSearch":"MoSP"}],"Focm":[function(require,module,exports) {
-"use strict";require("./sass/main.scss");var r=require("./js/refs");require("./js/homeAndLibrarySwitch");
-},{"./sass/main.scss":"clu1","./js/refs":"VyiV","./js/homeAndLibrarySwitch":"tFbP"}]},{},["Focm"], null)
-//# sourceMappingURL=/filmoteka-new/src.0aa68bd0.js.map
+"use strict";require("./sass/main.scss");var r=require("./js/refs");require("./js/onSearch"),require("./js/homeAndLibrarySwitch");
+},{"./sass/main.scss":"clu1","./js/refs":"VyiV","./js/onSearch":"MoSP","./js/homeAndLibrarySwitch":"tFbP"}]},{},["Focm"], null)
+//# sourceMappingURL=/filmoteka-new/src.82d31936.js.map
