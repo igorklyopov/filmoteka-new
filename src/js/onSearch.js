@@ -19,8 +19,14 @@ function renderResaultsMarkup(results) {
   const moviesArray = [...results];
 
   moviesArray.forEach(element => {
+
     const genresArray = [...element.genre_ids]
-    genresArray.forEach((id, index, array) => {
+
+    if (genresArray.length >= 3) {
+
+      const genreList = genresArray.slice(0, 2)
+      
+    genreList.forEach((id, index, array) => {
       genres.forEach(genre => {
         if (genre.id === id) {
           id = ' ' + genre.name;
@@ -28,7 +34,20 @@ function renderResaultsMarkup(results) {
       })
       array[index] = id;
     })
-    element.genre_ids = genresArray;
+      element.genre_ids = genreList + ' Other';
+      
+    } else {
+
+      genresArray.forEach((id, index, array) => {
+      genres.forEach(genre => {
+        if (genre.id === id) {
+          id = ' ' + genre.name;
+        }
+      })
+      array[index] = id;
+    })
+      element.genre_ids = genresArray;
+    }
   });
 
     refs.sectionContainer.insertAdjacentHTML('beforeend', searchFilmsTpl(moviesArray));
