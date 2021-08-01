@@ -17,8 +17,6 @@ export function onSearch(e) {
 
 function renderResaultsMarkup(results) {
   const moviesArray = [...results];
-  // const shortDate = results.release_date.slice(0, 4);
-  // console.log(shortDate);
 
   moviesArray.forEach(element => {
     const shortDate = element.release_date.slice(0, 4);

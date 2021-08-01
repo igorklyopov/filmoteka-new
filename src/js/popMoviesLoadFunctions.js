@@ -21,9 +21,12 @@ function onHomePageLoad() {
 }
 
 function renderPopularMoviesCards(movies) {
-    const moviesArray = [...movies.results];
+
+  const moviesArray = [...movies.results];
+  
     moviesArray.forEach(element => {
       const genresArray = [...element.genre_ids]
+
       genresArray.forEach((id, index, array) => {
         genres.forEach(genre => {
           if (genre.id === id) {
@@ -32,7 +35,26 @@ function renderPopularMoviesCards(movies) {
         })
         array[index] = id;
       })
-      element.genre_ids = genresArray;
+    // });
+    element.genre_ids = genresArray;
+  
+  if(genresArray.length >= 3) {
+        const other = ' Other';
+          genresArray.splice(2, (genresArray.length - 2));
+          genresArray.push(other);
+        }
+        // console.log(genresArray)
+
+      let releaseDate = element.release_date;
+      // console.log(releaseDate)
+
+      const date = new Date(releaseDate);
+      let year = date.getFullYear();
+
+      if(!element.release_date) {
+        return;
+      }
+      element.release_date = year;
     });
   
     const movieList = popularFilmsTpl(moviesArray);

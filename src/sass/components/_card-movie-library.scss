@@ -34,12 +34,18 @@
 }
 .generes-rating {
   display: flex;
+  color: var(--primary-accent-color);
 }
 .genres {
   margin: 0;
   font-style: normal;
   font-weight: var(--medium-font-weight);
   color: var(--primary-accent-color);
+}
+.genres-separator {
+  display: block;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 .rating-container {
   margin-left: 10px;
