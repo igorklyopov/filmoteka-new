@@ -12,4 +12,5 @@ export const refs = {
   infiniteScrollingAnchor: document.querySelector('.js-infinite-scrolling-anchor'),
   myLibraryIsActive: document.querySelector('.my-library'),
   myHomeIsActive: document.querySelector('.home'),
+  cardMovieHomeImg: document.querySelector('.img-card-library')
 };

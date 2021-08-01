@@ -17,9 +17,16 @@ export function onSearch(e) {
 
 function renderResaultsMarkup(results) {
   const moviesArray = [...results];
+  // const shortDate = results.release_date.slice(0, 4);
+  // console.log(shortDate);
 
   moviesArray.forEach(element => {
-
+    const shortDate = element.release_date.slice(0, 4);
+    const cardMovieHomeImg = document.querySelector('.img-card-library')
+    element.poster_path
+      ? (element.poster_path = `https://image.tmdb.org/t/p/w500/${element.poster_path}`)
+      : (element.poster_path = 'https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg');
+    
     const genresArray = [...element.genre_ids]
 
     if (genresArray.length >= 3) {
@@ -46,8 +53,11 @@ function renderResaultsMarkup(results) {
       })
       array[index] = id;
     })
-      element.genre_ids = genresArray;
+    
+      genresArray.length !== 0? element.genre_ids = genresArray:element.genre_ids = 'Genre not specified';
     }
+    
+    element.release_date!==''? element.release_date = shortDate : element.release_date = 'Release date unknown';
   });
 
     refs.sectionContainer.insertAdjacentHTML('beforeend', searchFilmsTpl(moviesArray));
