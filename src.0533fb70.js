@@ -31,4 +31,4 @@ module.exports=[{id:28,name:"Action"},{id:12,name:"Adventure"},{id:16,name:"Anim
 },{"./apiService":"eQwa","./refs":"VyiV","./genres_ids.json":"Mme2","../templates/popular-films.hbs":"nvMn","./buttonSwitcher":"Lguc","./switchLoadingDots":"Pr1p"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss");var e=require("./js/refs");require("./js/onSearch"),require("./js/homeAndLibrarySwitch");var r=require("./js/popMoviesLoadFunctions");(0,r.onHomePageLoad)(),e.refs.weekBtn.addEventListener("click",r.onWeekBtnClick),e.refs.dayBtn.addEventListener("click",r.onDayBtnClick);const n=new IntersectionObserver(s,{threshold:0});function s([e]){e.isIntersecting&&(0,r.loadMorePopMovies)()}n.observe(e.refs.infiniteScrollingAnchor);
 },{"./sass/main.scss":"clu1","./js/refs":"VyiV","./js/onSearch":"MoSP","./js/homeAndLibrarySwitch":"tFbP","./js/popMoviesLoadFunctions":"byJq"}]},{},["Focm"], null)
-//# sourceMappingURL=/filmoteka-new/src.d03997ea.js.map
+//# sourceMappingURL=/filmoteka-new/src.0533fb70.js.map
